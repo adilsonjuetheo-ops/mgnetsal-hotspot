@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  zip-hotspot:
+    image: node:20-alpine
+    container_name: zip-hotspot
+    working_dir: /app
+    volumes:
+      - ./backend:/app
+      - ./public:/app/../public
+      - hotspot-data:/app/data
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    env_file:
+      - ./backend/.env
+    command: sh -c "npm install --production && node src/app.js"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  hotspot-data:
+    driver: local
