@@ -69,8 +69,7 @@ body {
   width: 200px;
   max-width: 85%;
   object-fit: contain;
-  filter: brightness(0) invert(1);
-  drop-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
   animation: pulse 2s infinite;
 }
 
