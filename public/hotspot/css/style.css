@@ -40,7 +40,7 @@ body {
 
 /* Header do card */
 .card-header {
-  background: var(--gradient);
+  background: linear-gradient(135deg, #071535 0%, #0d2356 60%, #0a1b44 100%);
   padding: 32px 24px 24px;
   text-align: center;
   position: relative;
@@ -66,10 +66,9 @@ body {
 
 .brand-logo {
   height: auto;
-  width: 220px;
-  max-width: 85%;
+  width: 230px;
+  max-width: 88%;
   object-fit: contain;
-  mix-blend-mode: screen;
   animation: pulse 2s infinite;
 }
 
