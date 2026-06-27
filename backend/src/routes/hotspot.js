@@ -113,7 +113,7 @@ router.post('/verify', async (req, res) => {
 
   res.json({
     success: true,
-    message: 'Acesso liberado! Aproveite o Wi-Fi da Zip Telecom.',
+    message: 'Acesso liberado! Aproveite o Wi-Fi da MG-NET SAL.',
     username: mikrotikResult?.username,
     password: mikrotikResult?.password,
     freeTimeMinutes: freeTime

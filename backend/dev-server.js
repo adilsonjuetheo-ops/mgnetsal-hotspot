@@ -8,7 +8,7 @@ app.use(express.static(path.join(__dirname, '../public')));
 
 // Mock API responses
 app.get('/api/hotspot/settings', (_, res) => res.json({
-  hotspot_title: 'Wi-Fi Grátis Zip Telecom',
+  hotspot_title: 'Wi-Fi Grátis MG-NET SAL',
   hotspot_subtitle: 'Conecte-se e aproveite a internet mais rápida da região!',
   hotspot_free_time: '60', otp_expiry_minutes: '5',
   require_name: '1', require_email: '0'
@@ -35,12 +35,12 @@ app.get('/api/admin/sessions', (_, res) => res.json({
   sessions: [{name:'João Silva',phone:'38988090001',mac_address:'AA:BB:CC:DD:EE:01',ip_address:'192.168.10.21',started_at:'2026-06-13T10:30:00'}]
 }));
 app.get('/api/admin/settings', (_, res) => res.json({
-  hotspot_title:'Wi-Fi Grátis Zip Telecom',hotspot_subtitle:'Conecte-se agora!',
+  hotspot_title:'Wi-Fi Grátis MG-NET SAL',hotspot_subtitle:'Conecte-se agora!',
   hotspot_free_time:'60',otp_expiry_minutes:'5',require_name:'1',require_email:'0',
-  zenvia_from:'ZipTelecom',mikrotik_host:'192.168.88.1',mikrotik_port:'8728',mikrotik_user:'admin',mikrotik_hotspot_server:'hotspot1'
+  zenvia_from:'MGNetSal',mikrotik_host:'192.168.88.1',mikrotik_port:'8728',mikrotik_user:'admin',mikrotik_hotspot_server:'hotspot1'
 }));
 app.put('/api/admin/settings', (_, res) => res.json({ success: true }));
-app.post('/api/admin/mikrotik/test', (_, res) => res.json({ success: true, identity: 'ZIP-TELECOM-RB' }));
+app.post('/api/admin/mikrotik/test', (_, res) => res.json({ success: true, identity: 'MGNETSAL-RB' }));
 app.post('/api/auth/change-password', (_, res) => res.json({ success: true }));
 app.get('/health', (_, res) => res.json({ status: 'ok' }));
 app.get('/admin', (_, res) => res.sendFile(path.join(__dirname, '../public/admin/index.html')));

@@ -50,7 +50,7 @@ app.get('/health', (req, res) => {
 initDatabase();
 
 app.listen(PORT, () => {
-  console.log(`\n🚀 Zip Hotspot rodando na porta ${PORT}`);
+  console.log(`\n🚀 MG-NET SAL Hotspot rodando na porta ${PORT}`);
   console.log(`   Portal Hotspot: http://localhost:${PORT}/`);
   console.log(`   Painel Admin:   http://localhost:${PORT}/admin`);
   console.log(`   Ambiente: ${process.env.NODE_ENV || 'development'}\n`);

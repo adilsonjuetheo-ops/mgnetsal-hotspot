@@ -1,12 +1,12 @@
 #!/bin/bash
-# Script de instalação do sistema Hotspot Zip Telecom
+# Script de instalação do sistema Hotspot MG-NET SAL
 # Execute como root: sudo bash install.sh
 
 set -e
 
 echo ""
 echo "============================================"
-echo "   Instalação — Zip Telecom Hotspot System"
+echo "   Instalação — MG-NET SAL Hotspot System"
 echo "============================================"
 echo ""
 
@@ -53,7 +53,7 @@ fi
 
 echo ""
 echo "Iniciando servidor com PM2..."
-pm2 start backend/src/app.js --name "zip-hotspot" --env production
+pm2 start backend/src/app.js --name "mgnetsal-hotspot" --env production
 pm2 save
 pm2 startup
 
@@ -64,11 +64,11 @@ echo ""
 echo "   Portal Hotspot: http://$(hostname -I | awk '{print $1}'):3000/"
 echo "   Painel Admin:   http://$(hostname -I | awk '{print $1}'):3000/admin"
 echo ""
-echo "   Login padrão: admin / zip@2024"
+echo "   Login padrão: admin / mgnet@2024"
 echo "   (MUDE A SENHA imediatamente!)"
 echo ""
 echo "   Comandos úteis:"
 echo "   pm2 status          — ver status"
-echo "   pm2 logs zip-hotspot — ver logs"
-echo "   pm2 restart zip-hotspot — reiniciar"
+echo "   pm2 logs mgnetsal-hotspot — ver logs"
+echo "   pm2 restart mgnetsal-hotspot — reiniciar"
 echo "============================================"

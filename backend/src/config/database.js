@@ -60,11 +60,11 @@ function initDatabase() {
   const insertSetting = db.prepare(`
     INSERT OR IGNORE INTO settings (key, value) VALUES (?, ?)
   `);
-  insertSetting.run('hotspot_title', 'Wi-Fi Grátis Zip Telecom');
+  insertSetting.run('hotspot_title', 'Wi-Fi Grátis MG-NET SAL');
   insertSetting.run('hotspot_subtitle', 'Conecte-se agora e aproveite a internet mais rápida da região!');
   insertSetting.run('hotspot_free_time', '60');
   insertSetting.run('otp_expiry_minutes', '5');
-  insertSetting.run('zenvia_from', 'ZipTelecom');
+  insertSetting.run('zenvia_from', 'MGNetSal');
   insertSetting.run('require_name', '1');
   insertSetting.run('require_email', '0');
 
@@ -73,7 +73,7 @@ function initDatabase() {
     process.env.ADMIN_USERNAME || 'admin'
   );
   if (!adminExists) {
-    const hash = bcrypt.hashSync(process.env.ADMIN_PASSWORD || 'zip@2024', 10);
+    const hash = bcrypt.hashSync(process.env.ADMIN_PASSWORD || 'mgnet@2024', 10);
     db.prepare('INSERT INTO admin_users (username, password_hash) VALUES (?, ?)').run(
       process.env.ADMIN_USERNAME || 'admin',
       hash

@@ -1,9 +1,9 @@
 version: '3.8'
 
 services:
-  zip-hotspot:
+  mgnetsal-hotspot:
     image: node:20-alpine
-    container_name: zip-hotspot
+    container_name: mgnetsal-hotspot
     working_dir: /app
     volumes:
       - ./backend:/app

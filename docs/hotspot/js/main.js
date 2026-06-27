@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     if (settings.hotspot_title) {
       document.getElementById('page-title').textContent = settings.hotspot_title;
-      document.title = settings.hotspot_title + ' — Zip Telecom';
+      document.title = settings.hotspot_title + ' — MG-NET SAL';
     }
     if (settings.hotspot_subtitle) {
       document.getElementById('page-subtitle').textContent = settings.hotspot_subtitle;
@@ -183,7 +183,7 @@ async function verifyOTP() {
         form.action = urlParams.linkLogin;
         addHidden(form, 'username', data.username);
         addHidden(form, 'password', data.password);
-        addHidden(form, 'dst', urlParams.dst || urlParams.linkOrig || 'http://www.ziptelecomsal.com.br');
+        addHidden(form, 'dst', urlParams.dst || urlParams.linkOrig || 'https://www.mgnetsal.com.br');
         document.body.appendChild(form);
         form.submit();
       }, 2000);

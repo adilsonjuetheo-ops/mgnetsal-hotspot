@@ -2,11 +2,11 @@ const axios = require('axios');
 
 async function sendOTP(phone, code) {
   const token = process.env.ZENVIA_TOKEN;
-  const from = process.env.ZENVIA_FROM || 'ZipTelecom';
+  const from = process.env.ZENVIA_FROM || 'MGNetSal';
 
   // Formata o número para E.164 (Brasil)
   const formattedPhone = formatPhone(phone);
-  const message = `Zip Telecom: Seu codigo de acesso e ${code}. Valido por ${process.env.OTP_EXPIRY_MINUTES || 5} minutos.`;
+  const message = `MG-NET SAL: Seu codigo de acesso e ${code}. Valido por ${process.env.OTP_EXPIRY_MINUTES || 5} minutos.`;
 
   try {
     const response = await axios.post(

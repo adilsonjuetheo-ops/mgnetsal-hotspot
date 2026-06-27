@@ -1,7 +1,7 @@
 {
-  "name": "zip-hotspot-backend",
+  "name": "mgnetsal-hotspot-backend",
   "version": "1.0.0",
-  "description": "Sistema de Hotspot com captação de leads para Zip Telecom",
+  "description": "Sistema de Hotspot com captação de leads para MG-NET SAL",
   "main": "src/app.js",
   "scripts": {
     "start": "node src/app.js",

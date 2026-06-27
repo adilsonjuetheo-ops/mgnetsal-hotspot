@@ -1,10 +1,10 @@
-# Zip Telecom — Sistema de Hotspot com Captação de Leads
+# MG-NET SAL — Sistema de Hotspot com Captação de Leads
 
 Sistema completo de Wi-Fi Hotspot com captação de leads via SMS, integração MikroTik e painel administrativo.
 
 ## Funcionalidades
 
-- **Portal Hotspot** — página de login com identidade visual Zip Telecom
+- **Portal Hotspot** — página de login com identidade visual MG-NET SAL
 - **Validação por SMS** — via Zenvia, código OTP de 6 dígitos
 - **Integração MikroTik** — liberação automática de acesso via API RouterOS
 - **Painel Admin** — dashboard, gerenciamento de leads, sessões e configurações
@@ -24,7 +24,7 @@ Sistema completo de Wi-Fi Hotspot com captação de leads via SMS, integração 
 
 ```bash
 # Clone ou extraia os arquivos no servidor
-cd zip-hotspot
+cd mgnetsal-hotspot
 
 # Execute o instalador
 sudo bash install.sh
@@ -69,7 +69,7 @@ Preencha:
 ```bash
 # Com PM2 (recomendado)
 npm install -g pm2
-pm2 start backend/src/app.js --name zip-hotspot
+pm2 start backend/src/app.js --name mgnetsal-hotspot
 pm2 save && pm2 startup
 
 # Ou diretamente
@@ -109,7 +109,7 @@ Veja o arquivo `mikrotik/configurar-hotspot.rsc` para o passo a passo completo.
 | `http://IP:3000/` | Portal hotspot (visto pelo cliente) |
 | `http://IP:3000/admin` | Painel administrativo |
 
-**Login padrão:** `admin` / `zip@2024` — **Mude após o primeiro acesso!**
+**Login padrão:** `admin` / `mgnet@2024` — **Mude após o primeiro acesso!**
 
 ---
 
@@ -137,6 +137,6 @@ Cliente recebe acesso à internet por X minutos
 
 ## Suporte Técnico
 
-**Zip Telecom** — Salinas, MG  
-WhatsApp: (38) 98809-6055  
-Instagram: @zip.telecom
+**MG-NET SAL** — Salinas, MG  
+WhatsApp: (38) 99871-6846  
+Instagram: @mgnetsalinas

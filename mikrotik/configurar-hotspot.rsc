@@ -1,5 +1,5 @@
 # =============================================================
-# Script de Configuração do Hotspot Zip Telecom no MikroTik
+# Script de Configuração do Hotspot MG-NET SAL no MikroTik
 # Execute estes comandos no Terminal do MikroTik (New Terminal)
 # =============================================================
 
@@ -11,17 +11,17 @@
 /user add name=hotspot-api password=SUA_SENHA_API group=full comment="Usuario API Hotspot"
 
 # 3. CRIAR PERFIL DO HOTSPOT
-/ip hotspot profile add name="zip-hotspot-profile" \
+/ip hotspot profile add name="mgnetsal-hotspot-profile" \
   html-directory=flash/hotspot \
   login-by=http-chap,http-pap \
   use-radius=no \
   http-cookie-lifetime=30m \
   keepalive-timeout=none \
-  trial-user-profile=zip-default \
+  trial-user-profile=mgnetsal-default \
   hotspot-address=192.168.10.1
 
 # 4. CRIAR PERFIL DE USUÁRIO PADRÃO
-/ip hotspot user profile add name="zip-default" \
+/ip hotspot user profile add name="mgnetsal-default" \
   session-timeout=1h \
   idle-timeout=10m \
   shared-users=1 \
@@ -40,11 +40,11 @@
 
 # 6. CONFIGURAR REDIRECIONAMENTO PARA PORTAL EXTERNO
 # Substitua SEU_IP_SERVIDOR pelo IP do servidor onde o sistema está rodando
-/ip hotspot profile set [find name="zip-hotspot-profile"] \
+/ip hotspot profile set [find name="mgnetsal-hotspot-profile"] \
   login-page="http://SEU_IP_SERVIDOR:3000/?mac=$(mac)&ip=$(ip)&dst=$(link-orig)&username=$(username)"
 
 # 7. WALLED GARDEN — liberar acesso ao servidor do portal antes do login
-/ip hotspot walled-garden add dst-host="SEU_IP_SERVIDOR" comment="Servidor Hotspot Zip"
+/ip hotspot walled-garden add dst-host="SEU_IP_SERVIDOR" comment="Servidor Hotspot MG-NET SAL"
 /ip hotspot walled-garden add dst-host="api.zenvia.com" comment="Zenvia SMS API"
 
 # 8. REGRA DE FIREWALL — permitir tráfego do hotspot para o servidor
@@ -52,7 +52,7 @@
   src-address=192.168.10.0/24 \
   dst-address=SEU_IP_SERVIDOR \
   action=accept \
-  comment="Hotspot para servidor Zip" \
+  comment="Hotspot para servidor MG-NET SAL" \
   place-before=0
 
 # 9. VERIFICAR SE O HOTSPOT ESTÁ ATIVO

@@ -1,7 +1,7 @@
 const API = '';
 const IS_DEMO = !window.location.hostname.match(/^\d+\.\d+\.\d+\.\d+$/) && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1';
-let token = IS_DEMO ? 'demo-token' : localStorage.getItem('zip_token');
-let adminUsername = localStorage.getItem('zip_admin') || 'Admin';
+let token = IS_DEMO ? 'demo-token' : localStorage.getItem('mgnet_token');
+let adminUsername = localStorage.getItem('mgnet_admin') || 'Admin';
 let currentPage = 1;
 let searchTimeout = null;
 let leadsChart = null;
@@ -20,8 +20,8 @@ async function doLogin() {
     const resp = await apiFetch('/api/auth/login', 'POST', { username, password }, false);
     token = resp.token;
     adminUsername = resp.username;
-    localStorage.setItem('zip_token', token);
-    localStorage.setItem('zip_admin', adminUsername);
+    localStorage.setItem('mgnet_token', token);
+    localStorage.setItem('mgnet_admin', adminUsername);
     showAdminApp();
   } catch (err) {
     showLoginAlert('error', err.message || 'Credenciais inválidas.');
@@ -36,8 +36,8 @@ function showLoginAlert(type, msg) {
 }
 
 function logout() {
-  localStorage.removeItem('zip_token');
-  localStorage.removeItem('zip_admin');
+  localStorage.removeItem('mgnet_token');
+  localStorage.removeItem('mgnet_admin');
   location.reload();
 }
 
@@ -245,7 +245,7 @@ async function exportLeads() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `leads_zip_telecom_${new Date().toISOString().slice(0,10)}.csv`;
+    a.download = `leads_mgnetsal_${new Date().toISOString().slice(0,10)}.csv`;
     a.click();
     URL.revokeObjectURL(url);
   } catch (err) {
@@ -429,12 +429,12 @@ async function demoResponse(url) {
       ]
     };
     if (url.includes('/settings')) return {
-      hotspot_title:'Wi-Fi Grátis Zip Telecom', hotspot_subtitle:'Conecte-se e aproveite a internet mais rápida da região!',
+      hotspot_title:'Wi-Fi Grátis MG-NET SAL', hotspot_subtitle:'Conecte-se e aproveite a internet mais rápida da região!',
       hotspot_free_time:'60', otp_expiry_minutes:'5', require_name:'1', require_email:'0',
-      zenvia_from:'ZipTelecom', mikrotik_host:'192.168.88.1', mikrotik_port:'8728',
+      zenvia_from:'MGNetSal', mikrotik_host:'192.168.88.1', mikrotik_port:'8728',
       mikrotik_user:'admin', mikrotik_hotspot_server:'hotspot1'
     };
-    if (url.includes('/mikrotik/test')) return { success: true, identity: 'ZIP-TELECOM-RB' };
+    if (url.includes('/mikrotik/test')) return { success: true, identity: 'MGNETSAL-RB' };
     if (url.includes('/auth/change-password')) return { success: true };
     return { success: true };
   }

@@ -1,10 +1,10 @@
 :root {
-  --primary: #c91818;
-  --primary-dark: #a01010;
-  --primary-orange: #e8401a;
-  --primary-light: #fdf2f2;
-  --primary-border: #fccaca;
-  --gradient: linear-gradient(135deg, #c91818 0%, #e8401a 100%);
+  --primary: #0066CC;
+  --primary-dark: #004C99;
+  --primary-orange: #0099FF;
+  --primary-light: #E8F4FF;
+  --primary-border: #99CCFF;
+  --gradient: linear-gradient(135deg, #0066CC 0%, #0099FF 100%);
   --white: #ffffff;
   --gray-light: #f4f6f9;
   --gray: #8a9ab5;
@@ -17,7 +17,7 @@
 
 body {
   font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
-  background: linear-gradient(135deg, #c91818 0%, #e8401a 60%, #1e2d3d 100%);
+  background: linear-gradient(135deg, #0066CC 0%, #0099FF 60%, #1e2d3d 100%);
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -147,7 +147,7 @@ body {
 .form-control:focus {
   border-color: var(--primary);
   background: white;
-  box-shadow: 0 0 0 3px rgba(201,24,24,0.12);
+  box-shadow: 0 0 0 3px rgba(0,102,204,0.12);
 }
 
 .form-control.error {
@@ -168,7 +168,7 @@ body {
 .phone-wrapper:focus-within {
   border-color: var(--primary);
   background: white;
-  box-shadow: 0 0 0 3px rgba(201,24,24,0.12);
+  box-shadow: 0 0 0 3px rgba(0,102,204,0.12);
 }
 
 .phone-prefix {
@@ -216,7 +216,7 @@ body {
 .otp-input:focus {
   border-color: var(--primary);
   background: white;
-  box-shadow: 0 0 0 3px rgba(201,24,24,0.12);
+  box-shadow: 0 0 0 3px rgba(0,102,204,0.12);
   transform: scale(1.05);
 }
 
@@ -244,12 +244,12 @@ body {
 .btn-primary {
   background: var(--gradient);
   color: white;
-  box-shadow: 0 4px 16px rgba(201,24,24,0.35);
+  box-shadow: 0 4px 16px rgba(0,102,204,0.35);
 }
 
 .btn-primary:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(201,24,24,0.45);
+  box-shadow: 0 6px 20px rgba(0,102,204,0.45);
 }
 
 .btn-primary:active:not(:disabled) {

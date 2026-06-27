@@ -79,7 +79,7 @@ router.get('/leads/export', (req, res) => {
   ).join('\n');
 
   res.setHeader('Content-Type', 'text/csv; charset=utf-8');
-  res.setHeader('Content-Disposition', 'attachment; filename="leads_zip_telecom.csv"');
+  res.setHeader('Content-Disposition', 'attachment; filename="leads_mgnetsal.csv"');
   res.send('﻿' + headers + rows); // BOM para Excel reconhecer UTF-8
 });
 
